@@ -1,0 +1,38 @@
+{
+	"pages": [
+    "pages/index/index",
+    "pages/cha/cha",
+	  "pages/xun/xun",
+    "pages/des/des"
+	],
+
+	"window": {
+		"navigationBarBackgroundColor": "#0099ff",
+		"navigationBarTextStyle": "white",
+		"backgroundColor": "#f8f8f8",
+		"navigationBarTitleText": "查询标题!"
+	},
+
+	"tabBar": {
+		"list": [{
+			"pagePath": "pages/index/index",
+			"text": "解析查询",
+			"iconPath": "/source/icon/stop.png",
+			"selectedIconPath": "/source/icon/stop-selected.png"
+		}, {
+			"pagePath": "pages/des/des",
+			"text": "关于我们",
+			"iconPath": "/source/icon/stop.png",
+			"selectedIconPath": "/source/icon/stop-selected.png"
+		}],
+		"selectedColor": "#0099ff",
+		"borderStyle": "black"
+	},
+
+	"networkTimeout": {
+		"request": 5000
+	},
+
+	"debug": false
+
+}

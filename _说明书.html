@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie6" lang="zh-cn"><![endif]-->
+<!--[if IE 7 ]><html class="ie7" lang="zh-cn"><![endif]-->
+<!--[if IE 8 ]><html class="ie8" lang="zh-cn"><![endif]-->
+<!--[if IE 9 ]><html class="ie9" lang="zh-cn"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="zh-cn"><!--<![endif]-->
+<head>
+ <meta charset="gb2312">
+ <title>域名信息查询小工具 - 完整源码(小程序+php)</title>
+ <meta name="Keywords" content="成绩查询系统,免费下载,考试成绩,查分系统,源码下载,工资查询系统,12391.net" />
+ <meta name="Description" content="成绩查询系统,免费下载,考试成绩查分系统,源码下载,工资查询系统,12391.net。" /> 
+<style type="text/css">
+/*自定义css*/
+*{margin:0;padding:0;font-family:Georgia,微软雅黑, 仿宋_GB2312, 黑体, Arial, Helvetica, sans-serif;}
+a{color:blue;text-decoration:none;margin:2px;font-size:12px;line-height:150%;}
+a:hover{color:red;}
+body{line-height:180%;}
+.table{margin:10px auto;width:90%;min-width:968px;color:black;border-bottom:1px solid #ccc;border-right:1px solid #ccc;}
+.table td{border-left:1px solid #ccc;height:32px;border-top:1px solid #ccc;padding:1px;font-size:12px;}
+.tr{text-align:center;}
+.tt{background:#eeeeee;font-weight:bold;color:#016493;font-size:28px;text-align:center;}
+.ts{padding:15px;text-align:left;}
+caption{color:blue;margin:0px;font-size:60px;line-height:100%;}
+strong{color:red;margin:2px;line-height:130%;}
+.div{width:98%;padding:15px;background:#326696;border-bottom:solid 1px White;color:white;}
+.btn{display:inline-block;padding:5px 8px;border:solid 2px white;color:white;margin:4px 8px;cursor:pointer;
+ font-weight:bold;font-size:14px;text-decoration:none;}
+.btn:hover{background:white;color:#326696;}
+h2{font-size:28px;line-height:190%;font-weight:bold;margin:4px 8px;color:blue;}
+h3{font-size:16px;line-height:140%;font-weight:600;margin:2px 4px;color:green;}
+h4{font-size:22px;line-height:180%;font-weight:600;margin:1px 2px;color:red;}
+h5{font-size:16px;line-height:120%;font-weight:300;margin:1px 2px;color:blue;}
+.center{font-size:18px;margin:0 auto;width:100%;max-width:1000px;}
+.mf{background:white;color:#326696;display:inline-block;height:18px;line-height:18px;
+ padding:5px;margin-top:-5px;text-align:center;font-size:14px;position:absolute;border-radius:11px;margin-left:10px;}
+#menu_list {margin:0 auto;width:100%;height:36px;line-height:36px;font-size:16px;text-align:center;list-style:none;}
+#menu_list a{border:solid 1px white;background:#326696;line-height:150%;font-weight:bold;}
+#menu_list li{margin:0 0 0 2px;float:left;position:relative;z-index:1;}
+#menu_list li .title{display:block;}
+#menu_list a:hover{background:white;color:#326696;border:1px solid white;}
+#menu_list li .sub_menu{position:absolute;left:8px;top:37px;border:1px solid white;background:gray;display:none;}
+#menu_list li .sub_menu a{border:1px solid white;color:white;display:block;}
+#menu_list li .sub_menu a:hover{background:white;color:#326696;border:1px solid white;}
+.fa:hover {text-decoration:underline;}
+.fa {color:white;text-decoration:none;}
+</style>
+</head>
+<body>
+<table cellspacing="0" class="table"><tr><td>
+<div class="div">
+<div class="title">域名信息查询小工具 - 完整源码(小程序+php)</div>
+<div align="center">
+
+<ul id="menu_list" class="center">
+<li class="menu"><a href="http://add.12391.net/" class="btn">网页版查询条件直查</a>
+<dl class="sub_menu">
+<a href="http://add.12391.net/" class="btn" target="_blank">即时在线开通</a>
+<a href="http://down.12391.net/12391/" class="btn" target="_blank">视频教程</a>
+<a href="https://item.taobao.com/item.htm?id=528692002051" class="btn" target="_blank">购买源码方案</a>
+<a href="https://item.taobao.com/item.htm?id=520023732507" class="btn" target="_blank">整体解决方案</a>
+<a href="https://item.taobao.com/item.htm?id=45703415332" class="btn" target="_blank">Asp无后台版</a>
+<a href="https://item.taobao.com/item.htm?id=45808268273" class="btn" target="_blank">Php无后台版</a>
+<a href="https://item.taobao.com/item.htm?id=520167788658" class="btn" target="_blank">多选1查询版</a>
+<a href="https://item.taobao.com/item.htm?id=43263796985" class="btn" target="_blank">多级下拉版</a>
+</dl></li>
+
+<li class="menu"><a href="http://new.12391.net/" class="btn">公众号版聊天式直查</a>
+<dl class="sub_menu">
+<a href="http://new.12391.net/" class="btn" target="_blank">即时在线开通</a>
+<a href="http://down.12391.net/WeiXinAdmin/" class="btn" target="_blank">视频教程</a>
+<a href="https://item.taobao.com/item.htm?id=520496908275" class="btn" target="_blank">购买源码方案</a>
+<a href="https://item.taobao.com/item.htm?id=529624346797" class="btn" target="_blank">整体解决方案</a>
+</dl></li>
+
+<li class="menu"><a href="http://add.dbcha.com/" class="btn">网页版密码登录查询</a>
+<dl class="sub_menu">
+<a href="http://add.echafen.com/" class="btn" target="_blank">登录查询本人版</a>
+<a href="http://ada.echafen.com/" class="btn" target="_blank">登录查询大家版</a>
+<a href="http://ade.echafen.com/" class="btn" target="_blank">登录模糊查询版</a>
+<a href="http://down.12391.net/dbcha/" class="btn" target="_blank">视频教程</a>
+<a href="https://item.taobao.com/item.htm?id=43193387085" class="btn" target="_blank">购买源码方案</a>
+<a href="https://item.taobao.com/item.htm?id=528108807297" class="btn" target="_blank">整体解决方案</a>
+</dl></li>
+
+<li class="menu"><a href="http://add.96cha.com/" class="btn">公众号绑定查询高级版</a>
+<dl class="sub_menu">
+<a href="http://add.96cha.com/" class="btn" target="_blank">绑定查询自己</a>
+<a href="http://add.96cha.com/" class="btn" target="_blank">绑定公共查询</a>
+<a href="http://add.96cha.com/" class="btn" target="_blank">不绑定直接查询</a>
+<a href="https://item.taobao.com/item.htm?id=44248394675" class="btn" target="_blank">购买源码方案</a>
+<a href="https://item.taobao.com/item.htm?id=528187132312" class="btn" target="_blank">整体解决方案</a>
+</dl></li>
+
+<li class="menu"><a href="http://add.96cha.com/" class="btn">网页版模糊查询系列</a>
+<dl class="sub_menu">
+<a href="http://add.xuelikai.com:1111/" class="btn" target="_blank">单输入框多条件</a>
+<a href="http://add.xuelikai.com:1111/" class="btn" target="_blank">下拉选择多条件版</a>
+<a href="http://add.xuelikai.com:1111/" class="btn" target="_blank">多输入框多条件版</a>
+<a href="https://item.taobao.com/item.htm?id=520167788658" class="btn" target="_blank">asp模糊多选1</a>
+<a href="https://item.taobao.com/item.htm?id=540197845648" class="btn" target="_blank">php模糊多选1</a>
+</dl></li>
+
+<li class="menu"><a href="http://add.xuelikai.com:1111/" class="btn">其他实用查询系统</a>
+<dl class="sub_menu">
+<a href="http://add.mabida.cn/" class="btn" target="_blank">防伪溯源系统</a>
+<a href="http://add.mabida.cn:1111/" class="btn" target="_blank">快递发货查询</a>
+<a href="http://add.mabida.cn:3333/" class="btn" target="_blank">证书查询系统</a>
+<a href="https://item.taobao.com/item.htm?id=537645721513" class="btn" target="_blank">课表查询</a>
+<a href="https://item.taobao.com/item.htm?id=543256127409" class="btn" target="_blank">淘宝优惠券</a>
+<a href="https://item.taobao.com/item.htm?id=525228396981" class="btn" target="_blank">公众号领码</a>
+</dl></li>
+
+</ul>
+<script type="text/javascript">
+var menu_list = document.getElementById("menu_list").childNodes;
+for (var i=0;i<menu_list.length;i++)
+{
+ if (menu_list[i].className=="menu")
+ {
+  menu_list[i].onmouseover = function(){fnNav(this,"block")};
+  menu_list[i].onmouseout = function(){fnNav(this,"none")};
+ }
+}
+function fnNav(obj,flag)
+{
+ obj.getElementsByTagName("dl")[0].style.display = flag;
+}
+</script>
+
+</div>
+</div>
+</td></tr>
+<tr><td>
+<h4>域名信息查询小工具 - 完整源码(小程序+php)</h4>
+<h3>主要功能：域名解析记录查询</h3>
+<h5><strong>A记录：</strong>将域名指向一个IPv4地址（例如：10.10.10.10），需要增加A记录</h5>
+<h5><strong>CNAME记录：</strong>如果将域名指向一个域名，实现与被指向域名相同的访问效果，需要增加CNAME记录</h5>
+<h5><strong>MX记录：</strong>建立电子邮箱服务，将指向邮件服务器地址，需要设置MX记录</h5>
+<h5><strong>NS记录：</strong>域名解析服务器记录，如果要将子域名指定某个域名服务器来解析，需要设置NS记录</h5>
+<h5><strong>TXT记录：</strong>可任意填写（可为空），通常用做SPF记录（反垃圾邮件）使用</h5>
+<h5><strong>AAAA记录：</strong>将主机名（或域名）指向一个IPv6地址（例如：ff03:0:0:0:0:0:0:c1），需要添加AAAA记录</h5>
+<h5><strong>SRV记录：</strong>记录了哪台计算机提供了哪个服务。格式为：服务的名字.协议的类型（例如：_example-server._tcp）</h5>
+<h5></h5>
+<h4>2.	php端接口使用说明书</h4>
+<h5><strong>推荐：</strong>需要linux+php环境支持，本人使用windows的nginx环境正常使用</h5>
+<h5><strong>备案域名绑定：</strong>已备案且需要在小程序后台添加白名单</h5>
+<h5><strong>https://支持：</strong>需要域名ssl证书支持，腾讯云可以免费开通一年</h5>
+<h5><strong>其他说明1：</strong>实时查询解析信息，无需个人后续更新维护</h5>
+<h5></h5>
+<h4>3.	小程序端说明书</h4>
+<h3>功能已经在本地测试环境正常使用，（<strong>详见小程序内截图</strong>）</h3>
+<h5><strong>适合学习：</strong>可以作为各种查询功能模板，非常实用。</h5>
+<h5><strong>域名查询：</strong>实时查询域名解析信息，非常实用。</h5>
+<h5><strong>测试建议：</strong>你可以不填写APPID直接用微信小程序开发者工具测试。</h5>
+<h5></h5>
+<h4>4.	你正式使用可能还需要</h4>
+<h3>笔者尚未完全可以完成以下信息，所以将源码公开让你们玩</h3>
+<h5><strong>1.认证微信服务号：</strong>注册企业服务号，并交过每年300元那种。</h5>
+<h5><strong>2.注册小程序帐号：</strong><a target=_blank href='https://mp.weixin.qq.com/' >https://mp.weixin.qq.com/</a>。</h5>
+<h5><strong>3.自己的以备案域名：</strong>企业实名备案域名。</h5>
+<h5><strong>4.腾讯云实名帐号：</strong>建议企业实名，并域名转入腾讯云。</h5>
+<h5><strong>5.HTTPs/ssl证书支持：</strong>腾讯云的域名可以免费开通一年。</h5>
+<h5></h5>
+<h5></h5>
+<h4>5.	作者信息</h4>
+<h3>非计算机专业人员，首次小程序作品，大家可以互相交流学习。</h3>
+<h5><strong>1.微信号：</strong>ewuyi-net。</h5>
+<h5><strong>2.邮箱号：</strong>admin@ewuyi.net。</h5>
+<h5><strong>3.主  页：</strong><a target=_blank href='http://add.12391.net/' >http://add.12391.net/</a>。</h5>
+
+</td></tr></table>
+</body>
+</html>
