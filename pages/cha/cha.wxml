@@ -1,0 +1,33 @@
+<!-- 非计算机专业的人的初次作品 不足之处请包涵 by echafen.com -->
+
+<page>
+	<view class="page">
+		<view class="page__hd">
+			<view class="page__title">域名{{type}}记录查询</view>
+			<view class="page__desc">查询该域名的{{type}}解析记录。</view>
+		</view>
+
+		<view class="page__bd">
+			<form bindsubmit="formSubmit">
+				<view class="weui-cells__title">输入域名查询</view>
+				<view class="weui-cells weui-cells_after-title">
+					<view class="weui-cell weui-cell_input hidden">
+						<view class="weui-cell__bd">
+<input type="text" class="weui-input" name="t" value="{{type}}"></input>
+						</view>
+					</view>
+          <view class="weui-cell weui-cell_input">
+						<view class="weui-cell__bd">
+<input type="text" class="weui-input" name="d" placeholder="请输入域名"></input>
+						</view>
+					</view>
+			</view>
+				<view class="wrap"></view>
+				<view class="page__bd page__bd_spacing">
+					<button class="weui-btn" type="primary" formType="submit">立即查询</button>
+				</view>
+			</form>
+		</view>
+
+	</view>
+</page>

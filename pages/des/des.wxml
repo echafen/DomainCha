@@ -1,0 +1,25 @@
+<!-- 非计算机专业的人的初次作品 不足之处请包涵 by echafen.com -->
+
+<page>
+	<view class="page">
+		<view class="page__hd">
+    <view class="page__title">域名信息查询小工具 V1.3</view>
+    <view class="page__desc">可以实时查询域名解析记录情况。包括A记录MX,CNAME,TXT等七八个功能。</view>
+		</view>
+
+		<!--view class="page__bd">
+    <block wx:for="{{item}}" wx:for-item="item">
+			<view class="weui-cells weui-cells_after-title">
+      	<view class="weui-cells__title">结果</view>
+				<block wx:for="{{item.list}}" wx:for-item="list">
+					<view class="weui-cell weui-cell_access">
+						<view class="weui-cell__bd">{{list.tie}}</view>
+						<view class="weui-cell__ft">{{list.lie}}</view>
+					</view>
+				</block>
+			</view>
+    </block>
+		</view-->
+
+	</view>
+</page>

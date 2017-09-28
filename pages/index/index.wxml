@@ -1,0 +1,22 @@
+<!-- 非计算机专业的人的初次作品 不足之处请包涵 by echafen.com -->
+
+<page>
+	<view class="page">
+		<view class="page__hd">
+			<view class="page__title">功能列表</view>
+			<view class="page__desc">可以查询域名的以下信息。</view>
+		</view>
+
+		<view class="page__bd">
+			<view class="weui-cells__title">选择查询类型</view>
+			<view class="weui-cells weui-cells_after-title">
+				<block wx:for="{{Chaxun}}" wx:for-item="chaxun">
+					<navigator class="weui-cell weui-cell_access" url="/pages/cha/cha?id={{chaxun.types}}" hover-class="weui-cell_active">
+						<view class="weui-cell__bd">{{chaxun.nrong}}</view>
+						<view class="weui-cell__ft weui-cell__ft_in-access"></view>
+					</navigator>
+				</block>
+			</view>
+		</view>
+	</view>
+</page>
